@@ -15,8 +15,10 @@ class ViewController: UIViewController {
     
     private var displayValue: Double {
         get {
-            let getDouble = Double(displayLabel.text!) ?? 0.0
-            return getDouble
+            guard let number = Double(displayLabel.text!) else {
+                fatalError("Cannot convert display label text to a double")
+            }
+            return number
         }
     }
     
@@ -28,17 +30,13 @@ class ViewController: UIViewController {
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         isFinishTypingNumber = true
         
-        guard let number = Double(displayLabel.text!) else {
-            fatalError("Cannot convert display label text to a double")
-        }
-        
         if let calcMethod = sender.currentTitle {
             if calcMethod == "+/-" {
-                displayLabel.text = String(number * -1)
+                displayLabel.text = String(displayValue * -1)
             }else if calcMethod == "AC" {
                 displayLabel.text = String(0.0)
             }else if calcMethod == "%" {
-                let percent = number / 100
+                let percent = displayValue / 100
                 displayLabel.text = String(percent)
             }
         }
