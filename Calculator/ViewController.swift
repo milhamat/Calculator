@@ -9,12 +9,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var displayLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //balalaa
+        
     }
-
-
+    
+    @IBAction func calculateButtonPressed(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func numbButtonPressed(_ sender: UIButton) {
+        let label = sender.titleLabel?.text
+        print(label)
+    }
+    
 }
 
