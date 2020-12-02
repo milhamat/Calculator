@@ -13,6 +13,13 @@ class ViewController: UIViewController {
     
     private var isFinishTypingNumber: Bool = true
     
+    private var displayValue: Double {
+        get {
+            let getDouble = Double(displayLabel.text!) ?? 0.0
+            return getDouble
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
