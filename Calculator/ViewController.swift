@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var displayLabel: UILabel!
     
-    var isFinishTypingNumber: Bool = true
+    private var isFinishTypingNumber: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,21 @@ class ViewController: UIViewController {
     
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         isFinishTypingNumber = true
-        print(isFinishTypingNumber)
+        
+        guard let number = Double(displayLabel.text!) else {
+            fatalError("Cannot convert display label text to a double")
+        }
+        
+        if let calcMethod = sender.currentTitle {
+            if calcMethod == "+/-" {
+                displayLabel.text = String(number * -1)
+            }else if calcMethod == "AC" {
+                displayLabel.text = String(0.0)
+            }else if calcMethod == "%" {
+                let percent = number / 100
+                displayLabel.text = String(percent)
+            }
+        }
     }
     
     @IBAction func numbButtonPressed(_ sender: UIButton) {
@@ -30,10 +44,20 @@ class ViewController: UIViewController {
                 displayLabel.text = newValue
                 isFinishTypingNumber = false
             }else {
+                if newValue == "." {
+                    guard let currentDisplayValue = Double(displayLabel.text!) else {
+                        fatalError("Cannot convert display label text to double")
+                    }
+                    
+                    let isInt = floor(currentDisplayValue) == currentDisplayValue
+                    
+                    if isInt {
+                        return
+                    }
+                }
                 displayLabel.text = displayLabel.text! + newValue
             }
         }
-        print(isFinishTypingNumber)
     }
     
 }
