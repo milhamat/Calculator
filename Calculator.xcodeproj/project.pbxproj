@@ -13,6 +13,7 @@
 		DA418E5425773EA700D7FC14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA418E5225773EA700D7FC14 /* Main.storyboard */; };
 		DA418E5625773EAA00D7FC14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA418E5525773EAA00D7FC14 /* Assets.xcassets */; };
 		DA418E5925773EAA00D7FC14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA418E5725773EAA00D7FC14 /* LaunchScreen.storyboard */; };
+		DA418E752577CF5500D7FC14 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA418E742577CF5500D7FC14 /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DA418E5525773EAA00D7FC14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA418E5825773EAA00D7FC14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA418E5A25773EAA00D7FC14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA418E742577CF5500D7FC14 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,38 @@
 			children = (
 				DA418E4C25773EA700D7FC14 /* AppDelegate.swift */,
 				DA418E4E25773EA700D7FC14 /* SceneDelegate.swift */,
-				DA418E5025773EA700D7FC14 /* ViewController.swift */,
-				DA418E5225773EA700D7FC14 /* Main.storyboard */,
+				DA418E6E2577CE7E00D7FC14 /* Model */,
+				DA418E6D2577CE7600D7FC14 /* View */,
+				DA418E722577CEF800D7FC14 /* Controller */,
 				DA418E5525773EAA00D7FC14 /* Assets.xcassets */,
 				DA418E5725773EAA00D7FC14 /* LaunchScreen.storyboard */,
 				DA418E5A25773EAA00D7FC14 /* Info.plist */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		DA418E6D2577CE7600D7FC14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA418E5225773EA700D7FC14 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA418E6E2577CE7E00D7FC14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA418E742577CF5500D7FC14 /* CalculatorLogic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA418E722577CEF800D7FC14 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DA418E5025773EA700D7FC14 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA418E752577CF5500D7FC14 /* CalculatorLogic.swift in Sources */,
 				DA418E5125773EA700D7FC14 /* ViewController.swift in Sources */,
 				DA418E4D25773EA700D7FC14 /* AppDelegate.swift in Sources */,
 				DA418E4F25773EA700D7FC14 /* SceneDelegate.swift in Sources */,
@@ -287,12 +315,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4A4J3R44FB;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Rexy.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -306,12 +336,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4A4J3R44FB;
 				INFOPLIST_FILE = Calculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Rexy.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

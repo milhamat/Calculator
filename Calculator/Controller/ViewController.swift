@@ -19,6 +19,8 @@ class ViewController: UIViewController {
                 fatalError("Cannot convert display label text to a double")
             }
             return number
+        } set {
+            displayLabel.text = String(newValue)
         }
     }
     
@@ -31,14 +33,13 @@ class ViewController: UIViewController {
         isFinishTypingNumber = true
         
         if let calcMethod = sender.currentTitle {
-            if calcMethod == "+/-" {
-                displayLabel.text = String(displayValue * -1)
-            }else if calcMethod == "AC" {
-                displayLabel.text = String(0.0)
-            }else if calcMethod == "%" {
-                let percent = displayValue / 100
-                displayLabel.text = String(percent)
+            
+            let calculator = CalculatorLogic(calNum: displayValue)
+            
+            guard let result = calculator.getValue(senderVal: calcMethod) else {
+                fatalError("the result of calculator is nil")
             }
+            displayLabel.text = String(result)
         }
     }
     
@@ -50,11 +51,8 @@ class ViewController: UIViewController {
                 isFinishTypingNumber = false
             }else {
                 if newValue == "." {
-                    guard let currentDisplayValue = Double(displayLabel.text!) else {
-                        fatalError("Cannot convert display label text to double")
-                    }
                     
-                    let isInt = floor(currentDisplayValue) == currentDisplayValue
+                    let isInt = floor(displayValue) == displayValue
                     
                     if !isInt {
                         return
