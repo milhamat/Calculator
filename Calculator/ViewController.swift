@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                     
                     let isInt = floor(currentDisplayValue) == currentDisplayValue
                     
-                    if isInt {
+                    if !isInt {
                         return
                     }
                 }
