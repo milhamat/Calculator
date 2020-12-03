@@ -38,10 +38,9 @@ class ViewController: UIViewController {
             
             calculator.setNumber(displayValue)
             
-            guard let result = calculator.getValue(symbol: calcMethod) else {
-                fatalError("the result of calculator is nil")
+            if let result = calculator.getValue(symbol: calcMethod){
+                displayLabel.text = String(result)
             }
-            displayLabel.text = String(result)
         }
     }
     

@@ -19,15 +19,16 @@ struct CalculatorLogic {
     
     mutating func getValue(symbol: String) -> Double? {
         if let n = calNum{
-            if symbol == "+/-" {
+            switch symbol {
+            case "+/-":
                 return n * -1
-            }else if symbol == "AC" {
+            case "AC":
                 return 0.0
-            }else if symbol == "%" {
+            case "%":
                 return n * 0.01
-            }else if symbol == "=" {
+            case "=":
                 return performTwoNumCalculation(nTwo: n)
-            }else {
+            default:
                 intermediateCalculation = (number: n, calMethod: symbol)
             }
         }
